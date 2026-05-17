@@ -153,6 +153,14 @@ h2.st em{color:var(--neon);font-style:normal}
 .demo-btn.db-data{background:rgba(255,0,110,.12);color:#ff79a8;border:1px solid rgba(255,0,110,.3)}
 .demo-btn.db-data:hover{background:var(--pink);color:#fff}
 .demo-btn svg{width:11px;height:11px;fill:currentColor}
+/* ── Extra link buttons (GitHub / LinkedIn) per project card ── */
+.pc-links{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.9rem;}
+.pc-link-btn{display:inline-flex;align-items:center;gap:.35rem;font-family:'JetBrains Mono',monospace;font-size:.62rem;letter-spacing:.07em;text-transform:uppercase;padding:.38rem .85rem;border-radius:3px;text-decoration:none;transition:all .2s;white-space:nowrap;}
+.plb-gh{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);color:var(--muted)}
+.plb-gh:hover{background:rgba(255,255,255,.11);color:var(--text);border-color:rgba(255,255,255,.28)}
+.plb-li{background:rgba(0,119,181,.1);border:1px solid rgba(0,119,181,.25);color:#60a5fa}
+.plb-li:hover{background:rgba(0,119,181,.22);color:#93c5fd;border-color:rgba(0,119,181,.45)}
+/* ── Video modal ── */
 #vmodal{position:fixed;inset:0;z-index:1000;background:rgba(4,6,12,.95);backdrop-filter:blur(24px);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;}
 #vmodal.open{opacity:1;pointer-events:all}
 .vbox{width:min(880px,94vw);background:var(--bg2);border:1px solid var(--border);border-radius:12px;overflow:hidden;transform:scale(.93) translateY(16px);transition:transform .3s;}
@@ -204,7 +212,7 @@ footer{border-top:1px solid var(--border);padding:2rem 4rem;display:flex;justify
   <div class="vbox">
     <div class="vbox-head">
       <div class="vbox-title" id="vtitle">Project Demo</div>
-      <button class="vclose" id="vclose">✕</button>
+      <button class="vclose" id="vclose">&#x2715;</button>
     </div>
     <div class="vwrap" id="vwrap"></div>
     <div class="vfoot" id="vfoot"></div>
@@ -226,23 +234,23 @@ footer{border-top:1px solid var(--border);padding:2rem 4rem;display:flex;justify
 <section id="hero">
   <div class="hero-top">
     <div class="hero-left">
-      <div class="hero-tag"><span></span>Available · Cairo, Egypt</div>
+      <div class="hero-tag"><span></span>Available &middot; Cairo, Egypt</div>
       <h1 class="hn"><span class="first">YOSSEF</span><span class="last">MOHAMMED</span></h1>
-      <div class="hero-sub">// AI Engineer · Computer Vision · LLM · NLP · Remote Sensing</div>
-      <p class="hero-desc">Cairo University CS graduate building intelligent systems that see, understand, and reason. From satellite segmentation to RAG pipelines — I engineer AI that solves real problems at NARSS and beyond.</p>
+      <div class="hero-sub">// AI Engineer &middot; Computer Vision &middot; LLM &middot; NLP &middot; Remote Sensing</div>
+      <p class="hero-desc">Cairo University CS graduate building intelligent systems that see, understand, and reason. From satellite segmentation to RAG pipelines &mdash; I engineer AI that solves real problems at NARSS and beyond.</p>
       <div class="hero-btns">
         <a class="hbtn hbtn-solid" href="#projects">Explore Projects</a>
-        <a class="hbtn hbtn-ghost" href="https://github.com/Yossefmohammed" target="_blank">GitHub ↗</a>
-        <a class="hbtn hbtn-ghost" href="https://www.linkedin.com/in/yossef-mohammed-358802275/" target="_blank">LinkedIn ↗</a>
+        <a class="hbtn hbtn-ghost" href="https://github.com/Yossefmohammed" target="_blank">GitHub &#x2197;</a>
+        <a class="hbtn hbtn-ghost" href="https://www.linkedin.com/in/yossef-mohammed-358802275/" target="_blank">LinkedIn &#x2197;</a>
       </div>
     </div>
     <div class="hero-panel">
       <div class="panel-title">// profile.json</div>
-      <div class="panel-stat"><span class="ps-label">status</span><span class="ps-val green">● open_to_work</span></div>
+      <div class="panel-stat"><span class="ps-label">status</span><span class="ps-val green">&#x25CF; open_to_work</span></div>
       <div class="panel-stat"><span class="ps-label">location</span><span class="ps-val">Cairo, Egypt</span></div>
       <div class="panel-stat"><span class="ps-label">experience</span><span class="ps-val cyan">2+ years</span></div>
       <div class="panel-stat"><span class="ps-label">education</span><span class="ps-val">Cairo Univ. CS/AI</span></div>
-      <div class="panel-stat"><span class="ps-label">projects</span><span class="ps-val pink">7+ delivered</span></div>
+      <div class="panel-stat"><span class="ps-label">projects</span><span class="ps-val pink">8+ delivered</span></div>
       <div class="panel-stat"><span class="ps-label">current_role</span><span class="ps-val green">NARSS</span></div>
       <div class="panel-domains">
         <div class="pd-title">// domains</div>
@@ -267,11 +275,11 @@ footer{border-top:1px solid var(--border);padding:2rem 4rem;display:flex;justify
     <div class="rv rv1">
       <p class="about-p">I'm a <strong>fresh graduate AI engineer</strong> from Cairo University, passionate about pushing the boundaries of what machines can see, understand, and reason about. My work sits at the intersection of deep learning, computer vision, and language models.</p>
       <p class="about-p">I've built systems ranging from <strong>YOLOv8-powered industrial trackers</strong> to <strong>RAG pipelines with LLMs</strong>, and from <strong>satellite image segmentation</strong> to <strong>medical imaging classifiers</strong>. Each project is an opportunity to solve a problem that matters.</p>
-      <p class="about-p">Currently at <strong>NARSS</strong>, I develop AI solutions for remote sensing — applying deep learning to satellite imagery for detection, classification, and segmentation at national scale.</p>
-      <div class="edu-block"><div class="eb-tag">Education</div><div class="eb-title">B.Sc. Computer Science — AI Department</div><div class="eb-sub">Cairo University &nbsp;·&nbsp; 2020 – 2024</div></div>
+      <p class="about-p">Currently at <strong>NARSS</strong>, I develop AI solutions for remote sensing &mdash; applying deep learning to satellite imagery for detection, classification, and segmentation at national scale.</p>
+      <div class="edu-block"><div class="eb-tag">Education</div><div class="eb-title">B.Sc. Computer Science &mdash; AI Department</div><div class="eb-sub">Cairo University &nbsp;&middot;&nbsp; 2020 &ndash; 2024</div></div>
     </div>
     <div class="about-stats rv rv2">
-      <div class="astat"><div class="astat-n">7+</div><div class="astat-l">AI/ML Projects</div></div>
+      <div class="astat"><div class="astat-n">8+</div><div class="astat-l">AI/ML Projects</div></div>
       <div class="astat"><div class="astat-n">4</div><div class="astat-l">Professional Roles</div></div>
       <div class="astat"><div class="astat-n">2+</div><div class="astat-l">Years Experience</div></div>
       <div class="astat"><div class="astat-n">4</div><div class="astat-l">AI Domains</div></div>
@@ -279,112 +287,332 @@ footer{border-top:1px solid var(--border);padding:2rem 4rem;display:flex;justify
   </div>
 </div></section>
 
-<section id="experience" style="background:rgba(12,16,28,.5);padding:7rem 0"><div class="section">
-  <div class="sh rv"><div class="sh-num">02</div><span class="sh-tag">Career</span><h2 class="st">Work <em>Experience</em></h2><div class="sh-line"></div></div>
-  <div class="xp-grid">
-    <div class="xp rv rv1">
-      <div><div class="xp-meta-date">Dec 2025 – Present</div><div class="xp-meta-loc">Cairo, Egypt</div><div class="xp-badge">● Current</div></div>
-      <div><div class="xp-role">AI Software Engineer</div><div class="xp-co">NARSS — National Authority for Remote Sensing & Space Sciences</div><ul class="xp-pts"><li>Building AI & CV solutions for remote sensing and satellite imagery</li><li>Developing detection, classification, and segmentation models at national scale</li><li>Applying deep learning pipelines to support research and operational workflows</li><li>Collaborating with engineering teams to deploy AI models in production</li></ul></div>
-    </div>
-    <div class="xp rv rv2">
-      <div><div class="xp-meta-date">Aug – Oct 2025</div><div class="xp-meta-loc">Cairo, Egypt</div></div>
-      <div><div class="xp-role">Computer Vision Engineer</div><div class="xp-co">ATHLON</div><ul class="xp-pts"><li>Designed real-time vision pipelines for industrial machine intelligence</li><li>Built and deployed detection and classification systems for automation</li></ul></div>
-    </div>
-    <div class="xp rv rv3">
-      <div><div class="xp-meta-date">Jun – Sep 2024</div><div class="xp-meta-loc">Cairo, Egypt</div></div>
-      <div><div class="xp-role">ML & Computer Vision Intern</div><div class="xp-co">Instant Software Solutions</div><ul class="xp-pts"><li>Developed medical imaging models using Xception, EfficientNet, and YOLOv8</li><li>Implemented NLP sentiment analysis using LSTM</li><li>Built data-driven AI for healthcare and industrial verticals</li></ul></div>
-    </div>
-    <div class="xp rv rv4">
-      <div><div class="xp-meta-date">Aug – Sep 2024</div><div class="xp-meta-loc">Cairo, Egypt</div></div>
-      <div><div class="xp-role">Data Analyst Intern</div><div class="xp-co">Neurotix</div><ul class="xp-pts"><li>Cleaned and analyzed large datasets using SQL, Excel, and Power BI</li><li>Built interactive dashboards to surface actionable insights</li></ul></div>
-    </div>
-  </div>
-</div></section>
+<section id="projects" style="background:rgba(12,16,28,.5);padding:7rem 0">
+  <div class="section">
 
-<section id="skills"><div class="section">
-  <div class="sh rv"><div class="sh-num">03</div><span class="sh-tag">Arsenal</span><h2 class="st">Skills &amp; <em>Stack</em></h2><div class="sh-line"></div></div>
-  <div class="skills-outer">
-    <div class="skill-group rv rv1"><div class="sg-head"><span class="sg-icon">👁️</span><span class="sg-name">Computer Vision</span></div><div class="sg-body"><span class="skill-pill sp-cyan">YOLOv8</span><span class="skill-pill sp-cyan">Faster R-CNN</span><span class="skill-pill sp-cyan">Semantic Segmentation</span><span class="skill-pill sp-cyan">U-Net</span><span class="skill-pill sp-cyan">EfficientNet</span><span class="skill-pill sp-cyan">Xception</span><span class="skill-pill sp-cyan">Medical Imaging</span><span class="skill-pill sp-cyan">Camera Calibration</span><span class="skill-pill sp-cyan">Image Stitching</span><span class="skill-pill sp-cyan">Object Tracking</span></div></div>
-    <div class="skill-group rv rv2"><div class="sg-head"><span class="sg-icon">🧠</span><span class="sg-name">LLM & NLP</span></div><div class="sg-body"><span class="skill-pill sp-purple">LangChain</span><span class="skill-pill sp-purple">HuggingFace</span><span class="skill-pill sp-purple">RAG Systems</span><span class="skill-pill sp-purple">Transformers</span><span class="skill-pill sp-purple">LSTM</span><span class="skill-pill sp-purple">Sentiment Analysis</span><span class="skill-pill sp-purple">Text Summarization</span><span class="skill-pill sp-purple">Vector Databases</span><span class="skill-pill sp-purple">Word Embeddings</span></div></div>
-    <div class="skill-group rv rv3"><div class="sg-head"><span class="sg-icon">⚡</span><span class="sg-name">Frameworks & Languages</span></div><div class="sg-body"><span class="skill-pill sp-neon">Python</span><span class="skill-pill sp-neon">C++</span><span class="skill-pill sp-neon">PyTorch</span><span class="skill-pill sp-neon">TensorFlow</span><span class="skill-pill sp-neon">Keras</span><span class="skill-pill sp-neon">Fastai</span><span class="skill-pill sp-neon">Streamlit</span><span class="skill-pill sp-neon">Git / GitHub</span></div></div>
-    <div class="skill-group rv rv4"><div class="sg-head"><span class="sg-icon">📊</span><span class="sg-name">Data & BI</span></div><div class="sg-body"><span class="skill-pill sp-pink">SQL</span><span class="skill-pill sp-pink">MySQL</span><span class="skill-pill sp-pink">MS SQL Server</span><span class="skill-pill sp-pink">Power BI</span><span class="skill-pill sp-pink">Tableau</span><span class="skill-pill sp-pink">Data Cleaning</span><span class="skill-pill sp-pink">Data Visualization</span></div></div>
-  </div>
-</div></section>
+    <div class="sh rv">
+      <div class="sh-num">04</div>
+      <span class="sh-tag">Portfolio</span>
+      <h2 class="st">AI <em>Projects</em></h2>
+      <div class="sh-line"></div>
+    </div>
 
-<section id="projects" style="background:rgba(12,16,28,.5);padding:7rem 0"><div class="section">
-  <div class="sh rv"><div class="sh-num">04</div><span class="sh-tag">Portfolio</span><h2 class="st">AI <em>Projects</em></h2><div class="sh-line"></div></div>
-  <div class="proj-filters rv">
-    <button class="pf active" data-f="all">All Projects</button>
-    <button class="pf" data-f="cv">Computer Vision</button>
-    <button class="pf" data-f="llm">LLM / RAG</button>
-    <button class="pf" data-f="nlp">NLP</button>
-    <button class="pf" data-f="data">Data Science</button>
+    <div class="proj-filters rv">
+      <button class="pf active" data-f="all">All Projects</button>
+      <button class="pf" data-f="cv">Computer Vision</button>
+      <button class="pf" data-f="llm">LLM / RAG</button>
+      <button class="pf" data-f="nlp">NLP</button>
+      <button class="pf" data-f="data">Data Science</button>
+    </div>
+
+    <div class="bento rv rv1">
+
+      <!-- PROJECT 01 -->
+      <div class="pc pc-wide pc-cv"
+           data-cat="cv"
+           data-video="https://youtu.be/vm6nAFWRCKI?si=pP3GPgCUdROpPKsP"
+           data-title="Building Semantic Segmentation"
+           data-tags="U-Net,Transformer,TensorFlow,Streamlit,Satellite Imagery">
+
+        <div class="pc-idx">01</div>
+
+        <span class="pc-cat cat-cv">
+          <span class="cat-dot cv-dot"></span>
+          Computer Vision
+        </span>
+
+        <div class="pc-title">
+          Building Semantic Segmentation via U-Net Transformer
+        </div>
+
+        <p class="pc-desc">
+          Segmented building footprints in satellite imagery using U-Net Transformer architecture. Optimized with IoU &amp; Dice metrics. Deployed as a Streamlit application for real-time visualization &mdash; used in remote sensing workflows at NARSS.
+        </p>
+
+        <div class="pc-links">
+
+          <a class="pc-link-btn plb-gh"
+             href="https://github.com/Yossefmohammed/Bulding_Images_semantic_segmentation_with_UNET-Transform"
+             target="_blank" rel="noopener">
+            &#x2325; GitHub Repo
+          </a>
+
+          <a class="pc-link-btn plb-li"
+             href="https://www.linkedin.com/posts/yossef-mohammed-358802275_%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85-%D8%B9%D9%84%D9%8A%D9%83%D9%85-%D9%88%D8%B1%D8%AD%D9%85%D9%87-%D8%A7%D9%84%D9%84%D9%87-%D9%88%D8%A8%D8%B1%D9%83%D8%A7%D8%AA%D9%87-%D9%85%D8%B4%D8%B1%D9%88%D8%B9-%D8%AC%D8%AF%D9%8A%D8%AF-activity-7386372054402371584-XTuL?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEM3f3QBVoyQWy2VA_nA3nv9_e7gGJ3Answ"
+             target="_blank" rel="noopener">
+            in LinkedIn Post
+          </a>
+
+        </div>
+
+        <div class="pc-footer">
+
+          <div class="pc-stack">
+            <span class="pt">U-Net</span>
+            <span class="pt">Transformer</span>
+            <span class="pt">TensorFlow</span>
+            <span class="pt">Streamlit</span>
+          </div>
+
+          <button class="demo-btn db-cv">
+            <svg viewBox="0 0 16 16">
+              <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zm-1.5 5v6l5-3-5-3z"/>
+            </svg>
+            Watch Demo
+          </button>
+
+        </div>
+      </div>
+
+      <!-- PROJECT 02 -->
+      <div class="pc pc-slim pc-llm"
+           data-cat="llm"
+           data-video="https://youtu.be/P_lYkk8A7k0?si=ldblaQaMZH2Jbij3"
+           data-title="Daleel AI — RAG Application with LLMs"
+           data-tags="LangChain,HuggingFace,Vector DB,RAG,NLP">
+
+        <div class="pc-idx">02</div>
+
+        <span class="pc-cat cat-llm">
+          <span class="cat-dot llm-dot"></span>
+          LLM / RAG
+        </span>
+
+        <div class="pc-title">
+          Daleel AI — Retrieval-Augmented Generation System
+        </div>
+
+        <p class="pc-desc">
+          Built an AI-powered RAG system using LangChain, HuggingFace, and vector search to retrieve relevant information and generate context-aware responses.
+        </p>
+
+        <div class="pc-links">
+
+          <a class="pc-link-btn plb-gh"
+             href="https://github.com/Yossefmohammed/daleel-ai"
+             target="_blank" rel="noopener">
+            &#x2325; GitHub Repo
+          </a>
+
+          <a class="pc-link-btn plb-li"
+             href="https://www.linkedin.com/posts/yossef-mohammed-358802275_opensource-artificialintelligence-graphrag-ugcPost-7451253558412431360-J62E"
+             target="_blank" rel="noopener">
+            in LinkedIn Post
+          </a>
+
+        </div>
+
+        <div class="pc-footer">
+
+          <div class="pc-stack">
+            <span class="pt">LangChain</span>
+            <span class="pt">HuggingFace</span>
+            <span class="pt">Vector DB</span>
+            <span class="pt">RAG</span>
+          </div>
+
+          <button class="demo-btn db-llm">
+            <svg viewBox="0 0 16 16">
+              <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zm-1.5 5v6l5-3-5-3z"/>
+            </svg>
+            Watch Demo
+          </button>
+
+        </div>
+      </div>
+
+      <!-- PROJECT 03 -->
+      <div class="pc pc-third pc-cv"
+           data-cat="cv"
+           data-video="https://youtu.be/xCzKlkZCaXA?si=68y3mdhGmKM8XkJC"
+           data-title="Wheat Head Detection"
+           data-tags="Faster R-CNN,ResNet-50,PyTorch,Agricultural AI">
+
+        <div class="pc-idx">03</div>
+
+        <span class="pc-cat cat-cv">
+          <span class="cat-dot cv-dot"></span>
+          Computer Vision
+        </span>
+
+        <div class="pc-title">
+          Wheat Head Detection — Faster R-CNN
+        </div>
+
+        <p class="pc-desc">
+          Object detection with ResNet-50 backbone for agricultural AI. Custom PyTorch training pipeline with precision/recall optimization.
+        </p>
+
+        <div class="pc-links">
+
+          <a class="pc-link-btn plb-gh"
+             href="https://github.com/Yossefmohammed/wheat-detection-faster-rcnn-resnet50"
+             target="_blank" rel="noopener">
+            &#x2325; GitHub Repo
+          </a>
+
+          <a class="pc-link-btn plb-li"
+             href="https://www.linkedin.com/posts/yossef-mohammed-358802275_ai-machinelearning-agriculture-activity-7195247835447980033-Alz7?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEM3f3QBVoyQWy2VA_nA3nv9_e7gGJ3Answ"
+             target="_blank" rel="noopener">
+            in LinkedIn Post
+          </a>
+
+        </div>
+
+        <div class="pc-footer">
+
+          <div class="pc-stack">
+            <span class="pt">Faster R-CNN</span>
+            <span class="pt">ResNet-50</span>
+            <span class="pt">PyTorch</span>
+          </div>
+
+          <button class="demo-btn db-cv">
+            <svg viewBox="0 0 16 16">
+              <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zm-1.5 5v6l5-3-5-3z"/>
+            </svg>
+            Watch Demo
+          </button>
+
+        </div>
+      </div>
+
+      <!-- PROJECT 04 -->
+      <div class="pc pc-third pc-cv"
+           data-cat="cv"
+           data-video="https://youtu.be/PSaKApMoF3g?si=UdLy07M3J3mrs58j"
+           data-title="Egg Tracking & Counting"
+           data-tags="YOLOv8,Segmentation,Object Tracking,Automation">
+
+        <div class="pc-idx">04</div>
+
+        <span class="pc-cat cat-cv">
+          <span class="cat-dot cv-dot"></span>
+          Computer Vision
+        </span>
+
+        <div class="pc-title">
+          Egg Tracking & Counting — YOLOv8
+        </div>
+
+        <p class="pc-desc">
+          YOLOv8 segmentation and tracking system for automated egg detection within a defined ROI.
+        </p>
+
+        <div class="pc-links">
+
+          <a class="pc-link-btn plb-gh"
+             href="https://github.com/Yossefmohammed/EGGS-counting-Detection-with_YOLOV8-Model"
+             target="_blank" rel="noopener">
+            &#x2325; GitHub Repo
+          </a>
+
+          <a class="pc-link-btn plb-li"
+             href="https://www.linkedin.com/posts/yossef-mohammed-358802275_%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85-%D8%B9%D9%84%D9%8A%D9%83%D9%85-%D9%88%D8%B1%D8%AD%D9%85%D8%A9-%D8%A7%D9%84%D9%84%D9%87-%D9%88%D8%A8%D8%B1%D9%83%D8%A7%D8%AA%D9%87-new-project-activity-7329806151234015233-sMUk?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEM3f3QBVoyQWy2VA_nA3nv9_e7gGJ3Answ"
+             target="_blank" rel="noopener">
+            in LinkedIn Post
+          </a>
+
+        </div>
+
+        <div class="pc-footer">
+
+          <div class="pc-stack">
+            <span class="pt">YOLOv8</span>
+            <span class="pt">Segmentation</span>
+            <span class="pt">Tracking</span>
+          </div>
+
+          <button class="demo-btn db-cv">
+            <svg viewBox="0 0 16 16">
+              <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zm-1.5 5v6l5-3-5-3z"/>
+            </svg>
+            Watch Demo
+          </button>
+
+        </div>
+      </div>
+
+      <!-- PROJECT 08 -->
+      <div class="pc pc-wide pc-cv"
+           data-cat="cv"
+           data-video="https://www.youtube.com/watch?v=6w4XwDR7hDE"
+           data-title="Real-Time Parking Slot Detection"
+           data-tags="OpenCV,Python,Computer Vision,Real-Time Detection">
+
+        <div class="pc-idx">08</div>
+
+        <span class="pc-cat cat-cv">
+          <span class="cat-dot cv-dot"></span>
+          Computer Vision
+        </span>
+
+        <div class="pc-title">
+          Real-Time Parking Slot Detection & Availability Tracking
+        </div>
+
+        <p class="pc-desc">
+          A computer vision system that detects and monitors parking slot availability in real time using OpenCV and Python.
+        </p>
+
+        <div class="pc-links">
+
+          <a class="pc-link-btn plb-gh"
+             href="https://github.com/Yossefmohammed/Parking-availiable-slots"
+             target="_blank" rel="noopener">
+            &#x2325; GitHub Repo
+          </a>
+
+          <a class="pc-link-btn plb-li"
+             href="https://www.linkedin.com/posts/yossef-mohammed-358802275_computervision-machinelearning-python-activity-7326246191673884672-bXdN"
+             target="_blank" rel="noopener">
+            in LinkedIn Post
+          </a>
+
+        </div>
+
+        <div class="pc-footer">
+
+          <div class="pc-stack">
+            <span class="pt">OpenCV</span>
+            <span class="pt">Python</span>
+            <span class="pt">Real-Time CV</span>
+            <span class="pt">Parking Detection</span>
+          </div>
+
+          <button class="demo-btn db-cv">
+            <svg viewBox="0 0 16 16">
+              <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zm-1.5 5v6l5-3-5-3z"/>
+            </svg>
+            Watch Demo
+          </button>
+
+        </div>
+      </div>
+
+    </div>
   </div>
-  <div class="bento rv rv1">
-    <div class="pc pc-wide pc-cv" data-cat="cv" data-video="YOUR_YOUTUBE_LINK_HERE" data-title="Building Semantic Segmentation" data-tags="U-Net,Transformer,TensorFlow,Streamlit,Satellite Imagery">
-      <div class="pc-idx">01</div><span class="pc-cat cat-cv"><span class="cat-dot cv-dot"></span>Computer Vision</span>
-      <div class="pc-title">Building Semantic Segmentation via U-Net Transformer</div>
-      <p class="pc-desc">Segmented building footprints in satellite imagery using U-Net Transformer architecture. Optimized with IoU & Dice metrics. Deployed as a Streamlit application for real-time visualization — used in remote sensing workflows at NARSS.</p>
-      <div class="pc-footer"><div class="pc-stack"><span class="pt">U-Net</span><span class="pt">Transformer</span><span class="pt">TensorFlow</span><span class="pt">Streamlit</span></div><button class="demo-btn db-cv"><svg viewBox="0 0 16 16"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zm-1.5 5v6l5-3-5-3z"/></svg>Watch Demo</button></div>
-    </div>
-    <div class="pc pc-slim pc-llm" data-cat="llm" data-video="YOUR_YOUTUBE_LINK_HERE" data-title="RAG Application with LLMs" data-tags="LangChain,HuggingFace,Vector DB,RAG,NLP">
-      <div class="pc-idx">02</div><span class="pc-cat cat-llm"><span class="cat-dot llm-dot"></span>LLM / RAG</span>
-      <div class="pc-title">Retrieval-Augmented Generation (RAG) System</div>
-      <p class="pc-desc">Built a full RAG pipeline combining vector search with large language models — document embedding, retrieval, and response generation using LangChain and HuggingFace.</p>
-      <div class="pc-footer"><div class="pc-stack"><span class="pt">LangChain</span><span class="pt">HuggingFace</span><span class="pt">Vector DB</span></div><button class="demo-btn db-llm"><svg viewBox="0 0 16 16"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zm-1.5 5v6l5-3-5-3z"/></svg>Watch Demo</button></div>
-    </div>
-    <div class="pc pc-third pc-cv" data-cat="cv" data-video="YOUR_YOUTUBE_LINK_HERE" data-title="Wheat Head Detection — Faster R-CNN" data-tags="Faster R-CNN,ResNet-50,PyTorch,Agricultural AI">
-      <div class="pc-idx">03</div><span class="pc-cat cat-cv"><span class="cat-dot cv-dot"></span>Computer Vision</span>
-      <div class="pc-title">Wheat Head Detection — Faster R-CNN</div>
-      <p class="pc-desc">Object detection with ResNet-50 backbone for agricultural AI. Custom PyTorch training pipeline with precision/recall optimization for wheat head localization in field images.</p>
-      <div class="pc-footer"><div class="pc-stack"><span class="pt">Faster R-CNN</span><span class="pt">ResNet-50</span><span class="pt">PyTorch</span></div><button class="demo-btn db-cv"><svg viewBox="0 0 16 16"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zm-1.5 5v6l5-3-5-3z"/></svg>Watch Demo</button></div>
-    </div>
-    <div class="pc pc-third pc-cv" data-cat="cv" data-video="YOUR_YOUTUBE_LINK_HERE" data-title="Egg Tracking & Counting — YOLOv8" data-tags="YOLOv8,Segmentation,Object Tracking,Automation">
-      <div class="pc-idx">04</div><span class="pc-cat cat-cv"><span class="cat-dot cv-dot"></span>Computer Vision</span>
-      <div class="pc-title">Egg Tracking & Counting — YOLOv8</div>
-      <p class="pc-desc">YOLOv8 segmentation and tracking system for automated egg detection within a defined ROI. Custom tracker and ROI filtering for real-world industrial automation.</p>
-      <div class="pc-footer"><div class="pc-stack"><span class="pt">YOLOv8</span><span class="pt">Segmentation</span><span class="pt">Tracking</span></div><button class="demo-btn db-cv"><svg viewBox="0 0 16 16"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zm-1.5 5v6l5-3-5-3z"/></svg>Watch Demo</button></div>
-    </div>
-    <div class="pc pc-third pc-cv" data-cat="cv" data-video="YOUR_YOUTUBE_LINK_HERE" data-title="Medical Image Classification" data-tags="EfficientNet,Xception,Keras,Healthcare AI">
-      <div class="pc-idx">05</div><span class="pc-cat cat-cv"><span class="cat-dot cv-dot"></span>Computer Vision</span>
-      <div class="pc-title">Medical Image Classification</div>
-      <p class="pc-desc">Deep learning models for healthcare imaging using EfficientNet and Xception. Built at Instant Software Solutions for real-time classification and clinical decision support.</p>
-      <div class="pc-footer"><div class="pc-stack"><span class="pt">EfficientNet</span><span class="pt">Xception</span><span class="pt">Keras</span></div><button class="demo-btn db-cv"><svg viewBox="0 0 16 16"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zm-1.5 5v6l5-3-5-3z"/></svg>Watch Demo</button></div>
-    </div>
-    <div class="pc pc-half pc-nlp" data-cat="nlp" data-video="YOUR_YOUTUBE_LINK_HERE" data-title="Twitter Sentiment Analysis — LSTM" data-tags="LSTM,NLP,Word Embeddings,Sequence Modeling,Keras">
-      <div class="pc-idx">06</div><span class="pc-cat cat-nlp"><span class="cat-dot nlp-dot"></span>NLP</span>
-      <div class="pc-title">Twitter Sentiment Analysis — LSTM</div>
-      <p class="pc-desc">LSTM network for classifying tweets into positive, negative, and neutral sentiments. Applied NLP embeddings and sequence modeling for social media analytics and customer feedback intelligence.</p>
-      <div class="pc-footer"><div class="pc-stack"><span class="pt">LSTM</span><span class="pt">NLP</span><span class="pt">Embeddings</span><span class="pt">Keras</span></div><button class="demo-btn db-nlp"><svg viewBox="0 0 16 16"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zm-1.5 5v6l5-3-5-3z"/></svg>Watch Demo</button></div>
-    </div>
-    <div class="pc pc-half pc-data" data-cat="data" data-video="YOUR_YOUTUBE_LINK_HERE" data-title="Business Intelligence Dashboards" data-tags="Power BI,SQL,Tableau,Excel,Data Cleaning">
-      <div class="pc-idx">07</div><span class="pc-cat cat-data"><span class="cat-dot data-dot"></span>Data Science</span>
-      <div class="pc-title">Business Intelligence Dashboards</div>
-      <p class="pc-desc">Designed and built interactive BI dashboards using Power BI and Tableau at Neurotix. Cleaned and analyzed complex datasets with SQL and Excel to surface actionable business insights.</p>
-      <div class="pc-footer"><div class="pc-stack"><span class="pt">Power BI</span><span class="pt">Tableau</span><span class="pt">SQL</span><span class="pt">Excel</span></div><button class="demo-btn db-data"><svg viewBox="0 0 16 16"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zm-1.5 5v6l5-3-5-3z"/></svg>Watch Demo</button></div>
-    </div>
-  </div>
-</div></section>
+</section>
 
 <section id="contact"><div class="section">
   <div class="sh rv"><div class="sh-num">05</div><span class="sh-tag">Let's Talk</span><h2 class="st">Get In <em>Touch</em></h2><div class="sh-line"></div></div>
   <div class="contact-grid">
     <div class="rv rv1">
       <div class="cta-big">Open to<em>new work.</em></div>
-      <p class="cta-sub">I'm always interested in exciting AI projects, research collaborations, and impactful engineering roles. If you have a vision that needs computer vision — or a language problem that needs an LLM — let's talk.</p>
+      <p class="cta-sub">I'm always interested in exciting AI projects, research collaborations, and impactful engineering roles. If you have a vision that needs computer vision &mdash; or a language problem that needs an LLM &mdash; let's talk.</p>
     </div>
     <div class="contact-links rv rv2">
-      <a class="cl" href="https://github.com/Yossefmohammed" target="_blank"><div class="cl-left"><div class="cl-icon ci-gh">⌥</div><div class="cl-info"><div class="cl-platform">GitHub</div><div class="cl-handle">Yossefmohammed</div></div></div><div class="cl-arrow">→</div></a>
-      <a class="cl" href="https://www.linkedin.com/in/yossef-mohammed-358802275/" target="_blank"><div class="cl-left"><div class="cl-icon ci-li">in</div><div class="cl-info"><div class="cl-platform">LinkedIn</div><div class="cl-handle">yossef-mohammed-358802275</div></div></div><div class="cl-arrow">→</div></a>
-      <a class="cl" href="mailto:ypssefmohammedahmed@gmail.com"><div class="cl-left"><div class="cl-icon ci-em">@</div><div class="cl-info"><div class="cl-platform">Email</div><div class="cl-handle">ypssefmohammedahmed@gmail.com</div></div></div><div class="cl-arrow">→</div></a>
-      <a class="cl" href="tel:01126078938"><div class="cl-left"><div class="cl-icon ci-ph">☎</div><div class="cl-info"><div class="cl-platform">Phone</div><div class="cl-handle">+20 112 607 8938</div></div></div><div class="cl-arrow">→</div></a>
+      <a class="cl" href="https://github.com/Yossefmohammed" target="_blank"><div class="cl-left"><div class="cl-icon ci-gh">&#x2325;</div><div class="cl-info"><div class="cl-platform">GitHub</div><div class="cl-handle">Yossefmohammed</div></div></div><div class="cl-arrow">&#x2192;</div></a>
+      <a class="cl" href="https://www.linkedin.com/in/yossef-mohammed-358802275/" target="_blank"><div class="cl-left"><div class="cl-icon ci-li">in</div><div class="cl-info"><div class="cl-platform">LinkedIn</div><div class="cl-handle">yossef-mohammed-358802275</div></div></div><div class="cl-arrow">&#x2192;</div></a>
+      <a class="cl" href="mailto:ypssefmohammedahmed@gmail.com"><div class="cl-left"><div class="cl-icon ci-em">@</div><div class="cl-info"><div class="cl-platform">Email</div><div class="cl-handle">ypssefmohammedahmed@gmail.com</div></div></div><div class="cl-arrow">&#x2192;</div></a>
+      <a class="cl" href="tel:01126078938"><div class="cl-left"><div class="cl-icon ci-ph">&#x260E;</div><div class="cl-info"><div class="cl-platform">Phone</div><div class="cl-handle">+20 112 607 8938</div></div></div><div class="cl-arrow">&#x2192;</div></a>
     </div>
   </div>
 </div></section>
 
 <footer>
-  <div class="fl"><span>Yossef Mohammed</span> · AI Engineer · Cairo, Egypt</div>
-  <div class="fr">© 2025 · Built with passion for AI</div>
+  <div class="fl"><span>Yossef Mohammed</span> &middot; AI Engineer &middot; Cairo, Egypt</div>
+  <div class="fr">&copy; 2025 &middot; Built with passion for AI</div>
 </footer>
 </div>
 
@@ -419,7 +647,7 @@ function openModal(card){
   const url=card.dataset.video||'',title=card.dataset.title||'Demo',tags=(card.dataset.tags||'').split(',').filter(Boolean);
   const empty=!url||url==='YOUR_YOUTUBE_LINK_HERE';
   vwrap.innerHTML=empty
-    ?`<div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.2rem;background:#06080f;color:#64748b;font-family:'JetBrains Mono',monospace;text-align:center;padding:2rem"><div style="font-size:3rem">🎬</div><div style="color:#00ff88;font-size:.85rem">No video linked yet</div><div style="font-size:.75rem;max-width:360px;line-height:1.8;opacity:.7">Replace <code style="background:rgba(0,255,136,.1);color:#00ff88;padding:.1rem .4rem;border-radius:2px">YOUR_YOUTUBE_LINK_HERE</code> in the HTML with your actual video URL</div></div>`
+    ?`<div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.2rem;background:#06080f;color:#64748b;font-family:'JetBrains Mono',monospace;text-align:center;padding:2rem"><div style="font-size:3rem">&#x1F3AC;</div><div style="color:#00ff88;font-size:.85rem">No video linked yet</div><div style="font-size:.75rem;max-width:360px;line-height:1.8;opacity:.7">Replace <code style="background:rgba(0,255,136,.1);color:#00ff88;padding:.1rem .4rem;border-radius:2px">YOUR_YOUTUBE_LINK_HERE</code> in the HTML with your actual video URL</div></div>`
     :(getEmbed(url)||'');
   vtitle.textContent=title;
   vfoot.innerHTML=tags.map(t=>`<span class="vft">${t}</span>`).join('');
